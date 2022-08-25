@@ -13,6 +13,7 @@ const feedEndpoint = async (req : NextApiRequest, res : NextApiResponse<Resposta
                 if(!usuario){
                     return res.status(400).json({erro : 'Usuario nao encontrado'});
                 }
+
                 const publicacoes = await PublicacaoModel
                     .find({idUsuario : usuario._id})
                     .sort({data : -1});

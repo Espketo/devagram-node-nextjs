@@ -1,11 +1,11 @@
 import type {NextApiResponse} from 'next';
-import type {RespostaPadraoMsg} from '../../DEVAGRAM-NODE-NEXTJS/types/RespostaPadraoMsg';
+import type {RespostaPadraoMsg} from '../../types/RespostaPadraoMsg';
 import nc from 'next-connect';
-import {updload, uploadImagemCosmic} from '../../DEVAGRAM-NODE-NEXTJS/services/uploadImagemCosmic';
-import {conectarMongoDB} from '../../DEVAGRAM-NODE-NEXTJS/middlewares/conectarMongoDB';
-import {validarTokenJWT} from '../../DEVAGRAM-NODE-NEXTJS/middlewares/validarTokenJWT';
-import {PublicacaoModel} from '../../DEVAGRAM-NODE-NEXTJS/models/PublicacaoModel';
-import {UsuarioModel} from '../../DEVAGRAM-NODE-NEXTJS/models/UsuarioModels';
+import {updload, uploadImagemCosmic} from '../../services/uploadImagemCosmic';
+import {conectarMongoDB} from '../../middlewares/conectarMongoDB';
+import {validarTokenJWT} from '../../middlewares/validarTokenJWT';
+import {PublicacaoModel} from '../../models/PublicacaoModel';
+import {UsuarioModel} from '../../models/UsuarioModels';
 
 const handler = nc()
     .use(updload.single('file'))

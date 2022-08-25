@@ -30,8 +30,7 @@ const handler = nc()
                 } 
             }
 
-            await UsuarioModel
-                .findByIdAndUpdate({_id : usuario._id}, usuario);
+            await UsuarioModel.findByIdAndUpdate({_id : usuario._id}, usuario);
 
             return res.status(200).json({msg : 'Usuario alterado com sucesos'});
         }catch(e){
