@@ -27,16 +27,13 @@ const handler = nc()
                 return res.status(400).json({erro : 'Senha invalida'});
             }
     
-            // validacao se ja existe usuario com o mesmo email
             const usuariosComMesmoEmail = await UsuarioModel.find({email : usuario.email});
             if(usuariosComMesmoEmail && usuariosComMesmoEmail.length > 0){
                 return res.status(400).json({erro : 'Ja existe uma conta com o email informado'});
             }
 
-            // enviar a imagem do multer para o cosmic
             const image = await uploadImagemCosmic(req);
     
-            // salvar no banco de dados
             const usuarioASerSalvo = {
                 nome : usuario.nome,
                 email : usuario.email,

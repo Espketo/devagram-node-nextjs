@@ -41,7 +41,6 @@ const pesquisaEndpoint
 
                     const usuariosEncontrados = await UsuarioModel.find({
                         $or: [{ nome: { $regex: filtro, $options: 'i' } },
-                            //{ email : {$regex : filtro, $options: 'i'}}
                         ]
                     });
 

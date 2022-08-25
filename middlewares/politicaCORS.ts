@@ -8,7 +8,7 @@ export const politicaCORS = (handler : NextApiHandler) =>
         await NextCors(req, res, {
             origin : '*',
             methods : ['GET', 'POST', 'PUT'],
-            optionsSuccessStatus : 200, // navegadores antigos dao problema quando se retorna 204
+            optionsSuccessStatus : 200,
         });
 
         return handler(req, res);
