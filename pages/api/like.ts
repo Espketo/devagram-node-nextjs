@@ -30,7 +30,6 @@ const likeEndpoint
                 await PublicacaoModel.findByIdAndUpdate({_id : publicacao._id}, publicacao);
                 return res.status(200).json({msg : 'Publicacao descurtida com sucesso'});
             }else {
-                // se o index for -1 sinal q ele nao curte a foto
                 publicacao.likes.push(usuario._id);
                 await PublicacaoModel.findByIdAndUpdate({_id : publicacao._id}, publicacao);
                 return res.status(200).json({msg : 'Publicacao curtida com sucesso'});
