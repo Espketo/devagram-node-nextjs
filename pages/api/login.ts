@@ -3,7 +3,7 @@ import {conectarMongoDB} from '../../middlewares/conectarMongoDB';
 import type {RespostaPadraoMsg} from '../../types/RespostaPadraoMsg';
 import type {LoginResposta} from '../../types/LoginResposta';
 import md5 from 'md5';
-import {UsuarioModel} from '../../models/UsuarioModels'; 
+import {UsuarioModel} from '../../models/UsuarioModel'; 
 import jwt from 'jsonwebtoken';
 
 const endpointLogin = async (

@@ -3,7 +3,7 @@ import { conectarMongoDB } from '../../middlewares/conectarMongoDB';
 import { politicaCORS } from '../../middlewares/politicaCORS';
 import { validarTokenJWT } from '../../middlewares/validarTokenJWT';
 import { SeguidorModel } from '../../models/SeguidorModel';
-import { UsuarioModel } from '../../models/UsuarioModels';
+import { UsuarioModel } from '../../models/UsuarioModel';
 import type { RespostaPadraoMsg } from '../../types/RespostaPadraoMsg';
 
 const pesquisaEndpoint

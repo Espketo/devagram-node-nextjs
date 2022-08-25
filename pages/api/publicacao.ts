@@ -5,7 +5,7 @@ import {updload, uploadImagemCosmic} from '../../services/uploadImagemCosmic';
 import {conectarMongoDB} from '../../middlewares/conectarMongoDB';
 import {validarTokenJWT} from '../../middlewares/validarTokenJWT';
 import {PublicacaoModel} from '../../models/PublicacaoModel';
-import {UsuarioModel} from '../../models/UsuarioModels';
+import {UsuarioModel} from '../../models/UsuarioModel';
 
 const handler = nc()
     .use(updload.single('file'))
