@@ -2,7 +2,7 @@ import type {NextApiRequest, NextApiResponse} from 'next';
 import type {RespostaPadraoMsg} from '../../types/RespostaPadraoMsg';
 import {validarTokenJWT} from '../../middlewares/validarTokenJWT';
 import {conectarMongoDB} from '../../middlewares/conectarMongoDB';
-import {UsuarioModel} from '../../models/UsuarioModel';
+import { UsuarioModel } from '../../models/UsuarioModel';
 import nc from 'next-connect';
 import {updload, uploadImagemCosmic} from '../../services/uploadImagemCosmic';
 import { politicaCORS } from '../../middlewares/politicaCORS';
@@ -31,7 +31,8 @@ const handler = nc()
                 } 
             }
 
-            await UsuarioModel.findByIdAndUpdate({_id : usuario._id}, usuario);
+            await UsuarioModel
+                .findByIdAndUpdate({_id : usuario._id}, usuario);
 
             return res.status(200).json({msg : 'Usuario alterado com sucesos'});
         }catch(e){
@@ -58,5 +59,4 @@ export const config = {
         bodyParser : false
     }
 }
-
 export default politicaCORS(validarTokenJWT(conectarMongoDB(handler)));
